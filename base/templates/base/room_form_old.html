@@ -1,0 +1,15 @@
+{% extends 'main.html'%}
+
+{%block content%}
+<div>
+    <form method="POST" action >
+        {% csrf_token%}
+        {{form.as_p}}
+        {%if status == 'create'%}
+            <input type="submit" value="Create">
+        {%elif status == 'update'%}
+            <input type="submit" value="Update">
+        {%endif%}
+    </form>
+</div>
+{%endblock%}
